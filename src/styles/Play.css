@@ -1,0 +1,13 @@
+.anime-play{
+    position: absolute;
+    margin-top: 50px;
+    left:250px;
+}
+.play-image{
+    height: 85%;
+    width: 90%;
+}
+.play-descp{
+    position: relative;
+    top:80px;
+}

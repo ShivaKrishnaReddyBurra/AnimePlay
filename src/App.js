@@ -1,4 +1,5 @@
 import Navbar from './components/Navbar';
+import Play from './components/Play';
 
 function App()
 {
@@ -6,6 +7,7 @@ function App()
     return (
         <div>
             <Navbar />
+            <Play />
         </div>
     )
 }
