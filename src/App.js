@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar';
 import Play from './components/Play';
+import Songlist from './components/Songlist';
 
 function App()
 {
@@ -8,6 +9,7 @@ function App()
         <div>
             <Navbar />
             <Play />
+            <Songlist />
         </div>
     )
 }
