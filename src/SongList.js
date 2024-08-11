@@ -7,6 +7,11 @@ const songs = [{
     id: 2,
     img: require("./images/itachi.jpg"),
     song: require("./music/senya.mp3")
+},
+{
+    id: 3,
+    img: require("./images/bleach.jpg"),
+    song: require("./music/bleach_battle_theme.mp3")
 }
 ]
 
