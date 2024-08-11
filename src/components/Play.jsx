@@ -1,6 +1,4 @@
-import naruto from '../images/naruto.jpeg';
 import '../styles/Play.css'
-import itachi from '../music/senya.mp3'
 import Songlist from './Songlist';
 function Play(props) {
 
