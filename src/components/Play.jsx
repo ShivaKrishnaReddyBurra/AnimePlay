@@ -11,10 +11,10 @@ function Play(props) {
                 <div className='col-8'>
                     <div className="row anime-play-top w-100 h-100">
                         <div className="col border border-dark">
-                            <img src={props.img} className='play-image w-100' />
+                            <img src={props.img} className='play-image w-100 h-100' />
                         </div>
                         <div className="col border border-dark">
-                            <h1 className='text-primary play-descp'>Itachi Theme</h1>
+                            <h1 className='text-primary play-descp fs-3'>{props.text}</h1>
                         </div>
                     </div>
                 </div>
