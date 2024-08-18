@@ -1,9 +1,28 @@
 import '../styles/Play.css'
 import Songlist from './Songlist';
+import { useState, useEffect } from 'react';
 function Play(props) {
+    const play = () => {
+        document.querySelector('audio').play();
+    }
+    const pause = () => {
+        document.querySelector('audio').pause();
+    }
+
+    const [isPlaying, setIsPlaying] = useState(false);
+
+    useEffect(() => {
+        const audioElement = document.querySelector('audio');
+        audioElement.addEventListener('play', () => {
+            setIsPlaying(true);
+        });
+        audioElement.addEventListener('pause', () => {
+            setIsPlaying(false);
+        });
+    }, []);
 
     return (
-        <div className=" container anime-play border border-dark min-vw-100 p-1" >
+        <div className=" container anime-play border border-dark min-vw-100" >
             <div className='row '>
                 <div className='col-4'>
                     <Songlist />
@@ -19,8 +38,13 @@ function Play(props) {
                     </div>
                 </div>
             </div>
-            <div className='row align-items-end p-1'>
-                <audio src={props.song} controls></audio>
+            <div className='d-flex justify-content-center row align-items-end p-1'>
+                <audio src={props.song}></audio>
+                {isPlaying ? (
+                    <button onClick={pause} className='w-25'><i className='bi bi-pause'></i></button>
+                ) : (
+                    <button onClick={play} className='w-25'><i className='bi bi-play'></i></button>
+                )}
             </div>
         </div>
     )

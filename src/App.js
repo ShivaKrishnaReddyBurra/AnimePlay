@@ -2,7 +2,7 @@ import Navbar from './components/Navbar';
 import Play from './components/Play';
 import Footer from './components/Footer';
 import songs from './SongList';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 function App() {
     const [index, setIndex] = useState(0);
     const next = () => {
@@ -19,16 +19,14 @@ function App() {
             setIndex(index - 1);
         }
     }
+ 
+
     return (
         <div>
             <Navbar />
             <Play img={songs[index].img} song={songs[index].song} text={songs[index].text} />
-            <button onClick={next} className='next-arrow position-fixed top-50 end-0 p-3 bg-transparent '><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" className="bi bi-arrow-right" viewBox="0 0 16 16">
-                <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
-            </svg></button>
-            <button onClick={previous} className='next-arrow position-fixed top-50  p-3 bg-transparent '><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16">
-                <path fillRule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
-            </svg></button>
+            <button onClick={next} className='next-arrow position-fixed top-50 end-0 p-3 bg-transparent '><i className='bi bi-arrow-right'></i></button>
+            <button onClick={previous} className='prev-arrow position-fixed top-50  p-3 bg-transparent '><i className='bi bi-arrow-left'></i></button>
             <Footer />
         </div>
     )
