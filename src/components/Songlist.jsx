@@ -1,13 +1,24 @@
 import '../styles/Songlist.css'
+import SongCards from './SongCards';
+import songs from '../List';
 function Songlist(){
+
+    function createSongCard(song){
+        return(
+            <SongCards img={song.img} title={song.title} text={song.smallDescription}/>
+        )
+    }
 
     return(
         <div className="anime-list bg-dark w-100 h-100">
-            <ul className="list-group"></ul>
-            <li className="list-group-item d-flex justify-content-between align-items-center fs-4 text-white">Song-1 </li>
-            <li className="list-group-item d-flex justify-content-between align-items-center fs-4 text-white">Song-2 </li>
-            <li className="list-group-item d-flex justify-content-between align-items-center fs-4 text-white">Song-3 </li>
-            <li className="list-group-item d-flex justify-content-between align-items-center fs-4 text-white">Song-4 </li>
+            <div className="row">
+                <div className="col-12">
+                    <h1 className="text-center text-light">Song List</h1>
+                </div>
+                <div className="d-flex-rev">
+                   {songs.map(createSongCard)}
+                </div>
+            </div>
         </div>
     )
 }

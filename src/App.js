@@ -1,7 +1,7 @@
 import Navbar from './components/Navbar';
 import Play from './components/Play';
 import Footer from './components/Footer';
-import songs from './SongList';
+import songs from './List';
 import { useState, useEffect } from 'react';
 function App() {
     const [index, setIndex] = useState(0);
